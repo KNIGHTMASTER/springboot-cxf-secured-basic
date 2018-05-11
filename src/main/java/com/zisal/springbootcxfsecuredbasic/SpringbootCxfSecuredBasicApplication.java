@@ -29,8 +29,11 @@ public class SpringbootCxfSecuredBasicApplication {
 		return args -> {
 			List<User> users = userService.findAll();
 			for (User user : users) {
-				user.setPassword(passwordEncoder.encode(user.getPassword()));
-				userService.update(user);
+				if (user.getHashed() != 1) {
+					user.setPassword(passwordEncoder.encode(user.getPassword()));
+					user.setHashed(1);
+					userService.update(user);
+				}
 			}
 		};
 	}

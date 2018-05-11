@@ -23,4 +23,4 @@ spring:
           hibernate:
             dialect : org.hibernate.dialect.MySQL5Dialect
             # Hibernate ddl auto (create, create-drop, validate, update)
-            ddl-auto : validate
+            ddl-auto : create-drop

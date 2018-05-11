@@ -47,6 +47,9 @@ public class User {
     )
     private Set<Role> roles = new HashSet<>();
 
+    @Column(name = "hashed")
+    private Integer hashed;
+
     public User() {
     }
 

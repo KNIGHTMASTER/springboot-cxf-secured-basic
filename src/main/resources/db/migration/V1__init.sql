@@ -4,6 +4,7 @@ CREATE TABLE user (
   name VARCHAR (150),
   password VARCHAR (255),
   enabled TINYINT NOT NULL DEFAULT 1,
+  hashed TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (id)
 );
 
